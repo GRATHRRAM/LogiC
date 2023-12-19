@@ -14,19 +14,21 @@ int main(void)
 	memset(inp,'\0',255);
 
 	bits bt;
+	STRC_Alloc_Bites(&bt, 1);
+	bt.bit[0] = false;
 
 	while(scanf("%254s", inp) != EOF)
 	{
 		if(inp[0] == 'b') {
 			bt = inter2bits(inp);
-			printf("b ->");
+			printf("b-> ");
 			for (int c = 0; c < bt.len;c++) {
 				printf("%d", bt.bit[c]);
 			}
 			printf("\n");
 		}
 		else if (strcmp(inp, "sbb") == 0) {
-			printf("sbb ->");
+			printf("sbb-> ");
 			for (int c = 0; c < bt.len;c++) {
 				printf("%d", bt.bit[c]);
 			}
@@ -49,11 +51,62 @@ int main(void)
 		}
 		else if (strcmp(inp, "not") == 0){
 			bt = inter(bt,"not");
-			printf("not");
+			printf("not-> ");
 			for (int c = 0; c < bt.len;c++) {
 				printf("%d", bt.bit[c]);
 			}
 			printf("\n");
+		}
+		else if (strcmp(inp, "and") == 0){
+			bt = inter(bt,"and");
+			printf("and-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(inp, "nand") == 0){
+			bt = inter(bt,"nand");
+			printf("nand-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(inp, "or") == 0){
+			bt = inter(bt,"or");
+			printf("or-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(inp, "xor") == 0){
+			bt = inter(bt,"xor");
+			printf("xor-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(inp, "nor") == 0){
+			bt = inter(bt,"nor");
+			printf("nor-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else if (strcmp(inp, "nxor") == 0){
+			bt = inter(bt,"nxor");
+			printf("nxor-> ");
+			for (int c = 0; c < bt.len;c++) {
+				printf("%d", bt.bit[c]);
+			}
+			printf("\n");
+		}
+		else {
+			printf("comand dont exist!!!\n");
 		}
 		memset(inp,'\0',255);
 	}

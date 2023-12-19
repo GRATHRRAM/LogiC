@@ -82,11 +82,12 @@ bits inter(bits BITS, char gate[3]) {
 	return bt;
 }
 
-bits inter2bits(char *STRING) {
+bits inter2bits(char *STRING) {//это хуйниа!
 	size_t counter = 0;
 	bool *buff = (bool*) malloc(sizeof(bool));
 	while (STRING[counter] != '\0') {
 		if(counter > 1) buff = (bool*) realloc(buff, sizeof(bool) * counter);
+		
 		if(STRING[counter] == '1') buff[counter] = true;
 		if(STRING[counter] == '0') buff[counter] = false;
 		counter++;
