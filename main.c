@@ -13,7 +13,7 @@ int main(void)
 
 	bits bt;
 	bt = inter2bits("1010\0");
-	bt = inter(bt,"nxor");
+	bt = inter(bt,"not");
 
 
 	
