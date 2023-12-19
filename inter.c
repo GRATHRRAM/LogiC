@@ -40,7 +40,7 @@ bits inter2bits(char *STRING) {
 	size_t counter = 0;
 	bool *buff = (bool*) malloc(sizeof(bool));
 	while (STRING[counter] != '\n') {
-		if(counter > 1) buff = (bool*) malloc(sizeof(bool) * counter);
+		if(counter > 1) buff = (bool*) realloc(buff, sizeof(bool) * counter);
 		buff[counter] = (bool) atoi(STRING[counter]);
 		counter++;
 	}
