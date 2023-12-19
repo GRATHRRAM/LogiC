@@ -1,7 +1,6 @@
-#ifndef GATES_C
-#define GATES_C
+#ifndef GATES_H
+#define GATES_H
 #include <stdbool.h>
-#endif // !GATES_C
 
 bool not (bool bit);
 bool and (bool bit1, bool bit2);
@@ -47,3 +46,4 @@ bool xnor(bool bit1, bool bit2) {
 		bit1 == 1 && bit2 == 1) return 1;
 	else return 0;
 }
+#endif // !GATES_C

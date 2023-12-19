@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "inter.c"
-#include "strc.c"
+#include "inter.h"
+#include "strc.h"
 
 
 int main(void) 
@@ -12,7 +12,8 @@ int main(void)
 	char inp[255];
 
 	bits bt;
-	bt = inter2bits("11");
+	bt = inter2bits("1010\0");
+	bt = inter(bt,"not");
 
 
 	

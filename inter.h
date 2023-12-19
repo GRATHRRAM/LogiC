@@ -1,11 +1,10 @@
-#ifndef INTER_C
-#define INTER_C
+#ifndef INTER_H
+#define INTER_H
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include "gates.c"
-#include "strc.c"
-#endif // !INTER_C
+#include "gates.h"
+#include "strc.h"
 //interpreter
 
 bits inter(bits BITS, char gate[3]);
@@ -39,9 +38,10 @@ bits inter(bits BITS, char gate[3]) {
 bits inter2bits(char *STRING) {
 	size_t counter = 0;
 	bool *buff = (bool*) malloc(sizeof(bool));
-	while (STRING[counter] != '\n') {
+	while (STRING[counter] != '\0') {
 		if(counter > 1) buff = (bool*) realloc(buff, sizeof(bool) * counter);
-		buff[counter] = (bool) atoi(STRING[counter]);
+		if(STRING[counter] == '1') buff[counter] = true;
+		if(STRING[counter] == '0') buff[counter] = false;
 		counter++;
 	}
 	bits bt;
@@ -49,3 +49,4 @@ bits inter2bits(char *STRING) {
 	bt.bit = buff;
 	return bt;
 }
+#endif // !INTER_C

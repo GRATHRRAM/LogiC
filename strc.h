@@ -1,8 +1,7 @@
-#ifndef STRC_C
-#define STRC_C
+#ifndef STRC_H
+#define STRC_H
 #include <stdbool.h>
 #include <stdlib.h>
-#endif
 
 typedef struct bits
 {
@@ -29,3 +28,4 @@ void STRC_Align(bits *Main, bits Ret) {
     STRC_ReAlloc_Bites(Main, Ret.len);
     Main->bit = Ret.bit;
 }
+#endif
