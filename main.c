@@ -8,12 +8,12 @@
 
 int main(void) 
 {
-	printf("LogiC - by GRATHRRAM (pre alpha)\n");
+	printf("LogiC - by GRATHRRAM (pre alpha 1)\n");
 	char inp[255];
 
 	bits bt;
 	bt = inter2bits("1010\0");
-	bt = inter(bt,"not");
+	bt = inter(bt,"nxor");
 
 
 	

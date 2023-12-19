@@ -28,4 +28,4 @@ void STRC_Align(bits *Main, bits Ret) {
     STRC_ReAlloc_Bites(Main, Ret.len);
     Main->bit = Ret.bit;
 }
-#endif
+#endif // !STRC_H

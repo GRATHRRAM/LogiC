@@ -29,6 +29,53 @@ bits inter(bits BITS, char gate[3]) {
 		}
 		buff_len = helpr;
 	}
+	else if (strcmp(gate, "nand") == 0) {
+		size_t helpr = 0;
+		for (size_t bit = 0; bit + 1 <=  BITS.len;bit+=2)
+		{
+			buff[helpr] = nand(BITS.bit[bit], BITS.bit[bit+1]);
+			helpr++;
+		}
+		buff_len = helpr;
+	}
+	else if (strcmp(gate, "or") == 0) {
+		size_t helpr = 0;
+		for (size_t bit = 0; bit + 1 <=  BITS.len;bit+=2)
+		{
+			buff[helpr] = or(BITS.bit[bit], BITS.bit[bit+1]);
+			helpr++;
+		}
+		buff_len = helpr;
+	}
+	else if (strcmp(gate, "nor") == 0) {
+		size_t helpr = 0;
+		for (size_t bit = 0; bit + 1 <=  BITS.len;bit+=2)
+		{
+			buff[helpr] = nor(BITS.bit[bit], BITS.bit[bit+1]);
+			helpr++;
+		}
+		buff_len = helpr;
+	}
+	else if (strcmp(gate, "xor") == 0) {
+		size_t helpr = 0;
+		for (size_t bit = 0; bit + 1 <=  BITS.len;bit+=2)
+		{
+			buff[helpr] = xor(BITS.bit[bit], BITS.bit[bit+1]);
+			helpr++;
+		}
+		buff_len = helpr;
+	}
+	else if (strcmp(gate, "nxor") == 0) {
+		size_t helpr = 0;
+		for (size_t bit = 0; bit + 1 <=  BITS.len;bit+=2)
+		{
+			buff[helpr] = xnor(BITS.bit[bit], BITS.bit[bit+1]);
+			helpr++;
+		}
+		buff_len = helpr;
+	}
+
+
 	bits bt;
 	STRC_Alloc_Bites(&bt, buff_len);
 	bt.bit = buff;
@@ -49,4 +96,4 @@ bits inter2bits(char *STRING) {
 	bt.bit = buff;
 	return bt;
 }
-#endif // !INTER_C
+#endif // !INTER_H

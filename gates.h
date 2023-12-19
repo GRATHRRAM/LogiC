@@ -46,4 +46,4 @@ bool xnor(bool bit1, bool bit2) {
 		bit1 == 1 && bit2 == 1) return 1;
 	else return 0;
 }
-#endif // !GATES_C
+#endif // !GATES_H
